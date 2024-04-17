@@ -13,7 +13,6 @@ python-dotenv = "^1.0.1"
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.3.7"
 pre-commit = "^3.7.0"
-vulture = "^2.11"
 mypy = "^1.9.0"
 
 [tool.poetry.group.test.dependencies]
@@ -21,6 +20,16 @@ pytest = "^8.1.1"
 
 [tool.ruff]
 line-length = 120
+
+[tool.mypy]
+ignore_missing_imports = false
+disallow_untyped_defs = true
+disallow_any_unimported = true
+no_implicit_optional = true
+check_untyped_defs = true
+warn_return_any = true
+warn_unused_ignores = true
+show_error_codes = true
 
 [build-system]
 requires = ["poetry-core"]
