@@ -12,7 +12,7 @@ RUN apt-get update && \
     apt-get clean &&\ 
     rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt .
+COPY requirements/requirements.txt .
 
 RUN pip install --upgrade pip && \
     pip wheel --no-cache-dir --no-deps \
