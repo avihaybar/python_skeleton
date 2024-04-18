@@ -1,7 +1,7 @@
 import sys
 
 
-def main():
+def main() -> None:
     input("Press Enter to continue...")
     sys.exit(0)
 
