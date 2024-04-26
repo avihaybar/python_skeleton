@@ -1,5 +1,5 @@
 # Build Stage
-FROM python:3.12.3-slim-bookworm as builder
+FROM python:3.12-slim-bookworm as builder
 
 WORKDIR /app
 
@@ -30,7 +30,7 @@ COPY --from=builder /wheels /wheels
 RUN chown -R app:app /wheels
 
 RUN pip install --upgrade pip && \
-    pip install --no-cache /wheels/* && \
+    pip install --no-cache-dir /wheels/* && \
     rm -rf /wheels
 
 USER app
@@ -38,5 +38,8 @@ USER app
 WORKDIR /app
 
 COPY --chown=app:app . .
+
+# If your app listens on a port, expose it
+# EXPOSE 8000
 
 CMD ["python", "main.py"]

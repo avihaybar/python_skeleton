@@ -16,10 +16,7 @@ Dockerfile
 .dockerignore
 
 # Byte-compiled / optimized / DLL files
-__pycache__/
-*/__pycache__/
-*/*/__pycache__/
-*/*/*/__pycache__/
+**/__pycache__/
 *.py[cod]
 */*.py[cod]
 */*/*.py[cod]
@@ -54,6 +51,7 @@ var/
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
+*.log.*
 
 # Unit test / coverage reports
 htmlcov/
@@ -94,3 +92,10 @@ venv/
 
 # VS Code
 .vscode/
+
+# PyTest
+pytest_cache/
+.pytest_cache/
+
+# Jupyter
+*.ipynb_checkpoints/
